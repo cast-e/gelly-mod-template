@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="branding/Gelly_Logo_WideRender_2000x1000_Transparent.png" border="20" />
+   <img src="https://github.com/gelly-gmod/gelly/blob/master/branding/Gelly_Logo_WideRender_2000x1000_Transparent.png" border="20" />
    <br />
    <a href="https://github.com/yogwoggf/gelly/releases">Grab the GMod addon</a>
    <br />
