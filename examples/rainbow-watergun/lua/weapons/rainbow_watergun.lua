@@ -187,7 +187,7 @@ function SWEP:ViewModelDrawn(vm)
 	)
 
 	draw.SimpleText(
-		"Press R for the menu or E to adjust time scale",
+		"Press R for the menu",
 		"DermaLarge",
 		0,
 		25,
