@@ -54,15 +54,15 @@ function min3(a, b, c)
 end
 
 function hueToRGB(hue)
-    kr := (5 + hue * 6) % 6
-    kg := (3 + hue * 6) % 6
-    kb := (1 + hue * 6) % 6
+    local r = (5 + hue * 6) % 6
+    local g = (3 + hue * 6) % 6
+    local b = (1 + hue * 6) % 6
 
-    r := 1 - math.max(min3(kr, 4-kr, 1), 0)
-    g := 1 - math.max(min3(kg, 4-kg, 1), 0)
-    b := 1 - math.max(min3(kb, 4-kb, 1), 0)
+    r = 1 - math.max(min3(r, 4 - r, 1), 0)
+    g = 1 - math.max(min3(g, 4 - g, 1), 0)
+    b = 1 - math.max(min3(b, 4 - b, 1), 0)
 
-    return r, g, b
+    return Vector(r, g, b)
 end
 
 function SWEP:PrimaryAttack()
@@ -77,7 +77,7 @@ function SWEP:PrimaryAttack()
 	
 	local material = gellyx.presets.getActivePreset().Material
 	
-	material.Absorption = hueToRGB(CurTime())
+	material.Absorption = hueToRGB(CurTime()) * math.max(material.Absorption.x, math.max(material.Absorption.y, material.Absorption.z))
 
 	gellyx.emitters.Cube({
 		center = position,
@@ -102,7 +102,7 @@ function SWEP:SecondaryAttack()
 	
 	local material = gellyx.presets.getActivePreset().Material
 	
-	material.Absorption = hueToRGB(CurTime())
+	material.Absorption = hueToRGB(CurTime()) * math.max(material.Absorption.x, math.max(material.Absorption.y, material.Absorption.z))
 
 	gellyx.emitters.Cube({
 		center = position,
@@ -120,7 +120,7 @@ function SWEP:DoDrawCrosshair(x, y)
 		x,
 		y,
 		CROSSHAIR_RADIUS,
-		self:CreateCrosshairColorFromActivePreset()
+		Color(255, 255, 255, 255)
 	)
 end
 
