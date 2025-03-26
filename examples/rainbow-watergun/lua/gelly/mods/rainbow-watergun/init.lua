@@ -3,9 +3,9 @@ print("Rainbow Watergun mod loaded")
 
 -- here is where your mod's code is going to be
 
-hook.Add("GellyModsShutdown", "gelly.mod.mod-name", function()
+hook.Add("GellyModsShutdown", "gelly.mod.rainbow-watergun", function()
 	-- remove any left over liquid
 	gelly.Reset()
 
-	print("Mod unloaded")
+	print("Rainbow Watergun unloaded")
 end)
